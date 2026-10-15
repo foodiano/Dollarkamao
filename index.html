@@ -11,6 +11,19 @@
 <meta property="og:type" content="website">
 <meta name="google-site-verification" content="beAdZCsfPDtvOpOotZZPIm_P03RHua18q7QebNOhQx4" />
 <link rel="stylesheet" href="styles.css">
+<style>
+.share-modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.78);z-index:100;align-items:center;justify-content:center;padding:20px}
+.share-modal{background:#101828;border:1px solid rgba(0,255,136,.35);border-radius:18px;max-width:440px;width:100%;padding:28px;position:relative}
+.share-modal h2{color:#00ff88;font-size:22px;margin-bottom:8px;padding-right:28px}
+.share-modal .sub{color:#aeb9cc;font-size:15px;margin-bottom:16px}
+.share-close{position:absolute;top:10px;right:14px;background:none;border:none;color:#aeb9cc;font-size:24px;cursor:pointer}
+.share-btn{display:block;width:100%;padding:14px;border:none;border-radius:12px;font-size:17px;font-weight:700;cursor:pointer;margin:8px 0;text-align:center;text-decoration:none;box-sizing:border-box}
+.share-wa{background:#25D366;color:#fff}
+.share-fb{background:#1877F2;color:#fff}
+.share-copy{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);color:#fff}
+#copyMsg{color:#00ff88;font-size:14px;min-height:20px;text-align:center;margin:6px 0}
+.share-foot{color:#8a94a8;font-size:12px;text-align:center;margin-top:12px}
+</style>
 </head>
 <body>
 <nav><div class="nav-inner">
@@ -77,7 +90,7 @@
 <h2 style="text-align:center;color:#00ff88;margin-bottom:6px;font-size:26px">For Educational Demo Only &mdash; No Real Earnings</h2>
 <p style="text-align:center;color:#aeb9cc;font-size:14px;margin-bottom:14px">A simulation of an earning dashboard — numbers are generated in your browser for demonstration only.</p>
 <p style="text-align:center">Demo Status: <span id="status">Stopped</span></p>
-<button class="btn btn-start" id="mainBtn" onclick="toggle()">Try Interactive Demo</button>
+<button class="btn btn-start" id="mainBtn" onclick="openSharePopup()">Try Interactive Demo</button>
 <p class="small" style="margin-top:8px">This is a front-end simulation. It does not generate real income.</p>
 <div class="stats" style="margin-top:12px">
 <div class="card stat"><b id="today">$0.00</b><span>Demo Balance &mdash; Today</span></div>
@@ -87,6 +100,20 @@
 </div>
 <h3 style="margin:16px 0 8px">Demo Logs</h3>
 <div class="log" id="log">Demo ready &mdash; press the button to try it.<br></div>
+<p class="small" style="margin-top:8px">Tip: Real engine = Google SEO + Shares. Fake engine = ban.</p>
+</div>
+</div>
+
+<div class="share-modal-overlay" id="shareModal">
+<div class="share-modal">
+<button class="share-close" onclick="closeSharePopup()" aria-label="Close">&times;</button>
+<h2>&#x1F680; Turn Demo Traffic into Real Traffic</h2>
+<p class="sub">This demo shows $0.00 &mdash; but real traffic comes from sharing. Try it:</p>
+<a class="share-btn share-wa" target="_blank" rel="noopener" href="https://wa.me/?text=Check%20this%20air%20fryer%20guide%20for%20small%20families%20-%20saved%20me%20money!%20https://dollarkamao.vercel.app/blog/best-air-fryer-small-families">&#x1F4F1; Share on WhatsApp</a>
+<a class="share-btn share-fb" target="_blank" rel="noopener" href="https://www.facebook.com/sharer/sharer.php?u=https://dollarkamao.vercel.app/blog/best-air-fryer-small-families">&#x1F4D8; Share on Facebook</a>
+<button class="share-btn share-copy" onclick="copyShareLink()">&#x1F517; Copy Link</button>
+<p id="copyMsg"></p>
+<p class="share-foot">This share brings REAL visitors to your site. No bots, 100% safe for AdSense &amp; Amazon Affiliates (foodianoworld-20).</p>
 </div>
 </div>
 
@@ -96,29 +123,15 @@
 </footer>
 
 <script>
-let running=false,total=0,tasks=0,clicks=0,interval;
-function toggle(){
-running=!running;
-document.getElementById('status').textContent=running?'Running...':'Stopped';
-document.getElementById('mainBtn').textContent=running?'Stop Demo':'Try Interactive Demo';
-document.getElementById('mainBtn').className=running?'btn btn-stop':'btn btn-start';
-if(running){start()}else{clearInterval(interval)}
-}
-function start(){
-const logs=["Found trending topic: AI Tools","Posting article...","Got 1 click = $0.12","Affiliate link shared","Price drop detected","New task completed"];
-interval=setInterval(()=>{
-const msg=logs[Math.floor(Math.random()*logs.length)];
-const earn=(Math.random()*0.5).toFixed(2);
-total=parseFloat(total)+parseFloat(earn);
-tasks++;clicks+=Math.floor(Math.random()*3);
-document.getElementById('today').textContent='$'+total.toFixed(2);
-document.getElementById('total').textContent='$'+(total*1.8).toFixed(2);
-document.getElementById('tasks').textContent=tasks;
-document.getElementById('clicks').textContent=clicks;
-const log=document.getElementById('log');
-log.innerHTML+='['+new Date().toLocaleTimeString()+'] '+msg+' +$'+earn+'<br>';
-log.scrollTop=log.scrollHeight;
-},1500);
+function openSharePopup(){document.getElementById('shareModal').style.display='flex';}
+function closeSharePopup(){document.getElementById('shareModal').style.display='none';}
+document.getElementById('shareModal').addEventListener('click',function(e){if(e.target===this)closeSharePopup();});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeSharePopup();});
+function copyShareLink(){
+var link='https://dollarkamao.vercel.app/blog/best-air-fryer-small-families';
+var done=function(){document.getElementById('copyMsg').textContent='Link Copied! Share it and get more guides';};
+function fallback(){var ta=document.createElement('textarea');ta.value=link;document.body.appendChild(ta);ta.select();try{document.execCommand('copy');done();}catch(e){}document.body.removeChild(ta);}
+if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(link).then(done).catch(fallback);}else{fallback();}
 }
 </script>
 </body>
