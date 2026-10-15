@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dollar Kamao - Auto Earn</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:system-ui}
+body{background:#0a0f1c;color:#fff;min-height:100vh;padding:20px}
+.card{background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.1);border-radius:16px;padding:20px;margin-bottom:16px;backdrop-filter:blur(10px)}
+h1{font-size:28px;text-align:center;margin:20px 0;background:linear-gradient(90deg,#00ff88,#00d4ff);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.stat{padding:16px;text-align:center}
+.stat b{font-size:24px;color:#00ff88;display:block}
+.btn{width:100%;padding:16px;border:none;border-radius:12px;font-size:18px;font-weight:700;cursor:pointer;margin:10px 0}
+.btn-start{background:#00ff88;color:#000}
+.btn-stop{background:#ff4444;color:#fff}
+.log{background:#000;border-radius:12px;padding:12px;height:160px;overflow-y:auto;font-family:monospace;font-size:12px;color:#00ff88}
+.small{opacity:0.6;font-size:12px;text-align:center;margin-top:10px}
+</style>
+<meta property="og:title" content="Dollar Kamao - Auto Earn" ><meta name="description" content="Dollar Kamao - Auto Earn" ><meta property="og:description" content="Dollar Kamao - Auto Earn" ><meta property="og:url" content="https://dollarkamao.vercel.app/" ><meta property="og:type" content="website" ></head>
+<body>
+<h1>💰 Dollar Kamao</h1>
+<div class="card" style="text-align:center">
+<p>Auto Bot Status: <span id="status">Stopped</span></p>
+<button class="btn btn-start" id="mainBtn" onclick="toggle()">START ENGINE</button>
+</div>
+<div class="stats">
+<div class="card stat"><b id="today">$0.00</b><span>Today</span></div>
+<div class="card stat"><b id="total">$0.00</b><span>Total</span></div>
+<div class="card stat"><b id="tasks">0</b><span>Tasks</span></div>
+<div class="card stat"><b id="clicks">0</b><span>Clicks</span></div>
+</div>
+<div class="card">
+<h3>Live Bot Logs</h3>
+<div class="log" id="log">Bot ready... Press START<br></div>
+</div>
+<div class="card">
+<h3>Withdraw</h3>
+<p style="margin:10px 0">Balance: <b id="bal">$0.00</b></p>
+<button class="btn" style="background:#fff;color:#000" onclick="alert('Connect PayPal to withdraw - Demo Mode')">Withdraw via PayPal / JazzCash</button>
+<p class="small">Demo mode - Real earning needs AdSense/Affiliate connect</p>
+</div>
+<script>
+let running=false, total=0, tasks=0, clicks=0;
+let interval;
+function toggle(){
+  running=!running;
+  document.getElementById('status').textContent=running?'Running...':'Stopped';
+  document.getElementById('mainBtn').textContent=running?'STOP ENGINE':'START ENGINE';
+  document.getElementById('mainBtn').className=running?'btn btn-stop':'btn btn-start';
+  if(running){start()}else{clearInterval(interval)}
+}
+function start(){
+  const logs=["Found trending topic: AI Tools","Posting article...","Got 1 click = $0.12","Affiliate link shared","Price drop detected","New task completed"];
+  interval=setInterval(()=>{
+    const msg=logs[Math.floor(Math.random()*logs.length)];
+    const earn=(Math.random()*0.5).toFixed(2);
+    total=parseFloat(total)+parseFloat(earn);
+    tasks++; clicks+=Math.floor(Math.random()*3);
+    document.getElementById('today').textContent='$'+total.toFixed(2);
+    document.getElementById('total').textContent='$'+(total*1.8).toFixed(2);
+    document.getElementById('bal').textContent='$'+total.toFixed(2);
+    document.getElementById('tasks').textContent=tasks;
+    document.getElementById('clicks').textContent=clicks;
+    const log=document.getElementById('log');
+    log.innerHTML+=`[${new Date().toLocaleTimeString()}] ${msg} +$${earn}<br>`;
+    log.scrollTop=log.scrollHeight;
+  },1500);
+}
+</script>
+</body>
+</html>
