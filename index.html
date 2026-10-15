@@ -74,18 +74,19 @@
 </div>
 
 <div class="card">
-<h3 style="text-align:center;margin-bottom:6px">Try the Live Demo</h3>
+<h2 style="text-align:center;color:#00ff88;margin-bottom:6px;font-size:26px">For Educational Demo Only &mdash; No Real Earnings</h2>
 <p style="text-align:center;color:#aeb9cc;font-size:14px;margin-bottom:14px">A simulation of an earning dashboard — numbers are generated in your browser for demonstration only.</p>
-<p style="text-align:center">Auto Bot Status: <span id="status">Stopped</span></p>
-<button class="btn btn-start" id="mainBtn" onclick="toggle()">START ENGINE</button>
+<p style="text-align:center">Demo Status: <span id="status">Stopped</span></p>
+<button class="btn btn-start" id="mainBtn" onclick="toggle()">Try Interactive Demo</button>
+<p class="small" style="margin-top:8px">This is a front-end simulation. It does not generate real income.</p>
 <div class="stats" style="margin-top:12px">
-<div class="card stat"><b id="today">$0.00</b><span>Today</span></div>
-<div class="card stat"><b id="total">$0.00</b><span>Total</span></div>
+<div class="card stat"><b id="today">$0.00</b><span>Demo Balance &mdash; Today</span></div>
+<div class="card stat"><b id="total">$0.00</b><span>Demo Balance &mdash; Total</span></div>
 <div class="card stat"><b id="tasks">0</b><span>Tasks</span></div>
 <div class="card stat"><b id="clicks">0</b><span>Clicks</span></div>
 </div>
-<h3 style="margin:16px 0 8px">Live Bot Logs</h3>
-<div class="log" id="log">Bot ready... Press START<br></div>
+<h3 style="margin:16px 0 8px">Demo Logs</h3>
+<div class="log" id="log">Demo ready &mdash; press the button to try it.<br></div>
 </div>
 </div>
 
@@ -99,7 +100,7 @@ let running=false,total=0,tasks=0,clicks=0,interval;
 function toggle(){
 running=!running;
 document.getElementById('status').textContent=running?'Running...':'Stopped';
-document.getElementById('mainBtn').textContent=running?'STOP ENGINE':'START ENGINE';
+document.getElementById('mainBtn').textContent=running?'Stop Demo':'Try Interactive Demo';
 document.getElementById('mainBtn').className=running?'btn btn-stop':'btn btn-start';
 if(running){start()}else{clearInterval(interval)}
 }
