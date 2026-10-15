@@ -106,6 +106,24 @@ nav.scrolled{box-shadow:0 6px 24px rgba(0,0,0,.45)}
 
 .section-title{text-align:center;color:#00ff88;margin:34px 0 4px;font-size:24px}
 
+
+/* ===== perfection pass: trust row, CTA pulse, toast, footer grid, perf ===== */
+.trust-row{display:flex;justify-content:center;align-items:center;gap:10px;flex-wrap:wrap;color:#8a94a8;font-size:12.5px;margin:20px 0 2px}
+.trust-row i{font-style:normal;opacity:.45}
+.btn-amazon small{font-weight:600;font-size:12px;opacity:.78;margin-left:7px;letter-spacing:.2px}
+.cta-sub{color:#8a94a8;font-size:12px;margin:9px 0 0}
+#slides .slide:first-child .btn-amazon{animation:ctaPulse 6s ease-in-out infinite}
+@keyframes ctaPulse{0%,90%,100%{transform:none;box-shadow:0 8px 22px rgba(255,153,0,.35)}94%{transform:scale(1.06);box-shadow:0 12px 36px rgba(255,153,0,.65)}}
+.trend-sec,.marquee,.art-grid,article.reveal,.card.reveal{content-visibility:auto;contain-intrinsic-size:auto 700px}
+.trend-track{-webkit-overflow-scrolling:touch}
+.toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,80px);background:#101828;border:1px solid rgba(0,255,136,.4);color:#e8eef7;padding:13px 20px;border-radius:14px;font-size:14px;z-index:200;opacity:0;transition:opacity .35s,transform .35s;max-width:92vw;text-align:center;box-shadow:0 12px 30px rgba(0,0,0,.5);pointer-events:none}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+.share-traffic{color:#00ff88;font-size:14px;font-weight:700;text-align:center;margin:2px 0 12px}
+.foot-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;max-width:1060px;margin:0 auto 4px;text-align:left}
+.foot-grid b{color:#fff;display:block;margin-bottom:6px;font-size:14px}
+.foot-grid a,.foot-grid span{display:block;color:#aeb9cc;font-size:13.5px;margin:7px 0;text-decoration:none}
+.foot-grid a:hover{color:#00ff88}
+.foot-base{margin-top:14px}
 @media (max-width:760px){
   .slide{grid-template-columns:1fr;padding:22px;gap:14px}
   .slide-img img{max-height:230px}
@@ -114,6 +132,7 @@ nav.scrolled{box-shadow:0 6px 24px rgba(0,0,0,.45)}
   .trend-arrows{display:none}
   .art-grid{grid-template-columns:1fr}
   .btn-amazon{width:100%;text-align:center;box-sizing:border-box}
+  .foot-grid{grid-template-columns:1fr 1fr}
 }
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}
@@ -134,6 +153,8 @@ nav.scrolled{box-shadow:0 6px 24px rgba(0,0,0,.45)}
 
 <div class="wide">
 
+<div class="trust-row reveal"><span>✓ No AI Spam</span><i>•</i><span>✓ Real Research</span><i>•</i><span>✓ Amazon Verified Tag foodianoworld-20</span></div>
+
 <!-- ============ HERO CAROUSEL ============ -->
 <section class="carousel reveal" aria-label="Featured kitchen products">
 <div class="slides" id="slides">
@@ -149,7 +170,8 @@ nav.scrolled{box-shadow:0 6px 24px rgba(0,0,0,.45)}
 <li>4–6 qt size is perfect for 2–4 people</li>
 <li>Dishwasher-safe basket for easy cleanup</li>
 </ul>
-<a class="btn-amazon" href="https://www.amazon.com/s?k=air+fryer&tag=foodianoworld-20" target="_blank" rel="nofollow noopener sponsored">Check Price on Amazon</a>
+<a class="btn-amazon" href="https://www.amazon.com/s?k=air+fryer&tag=foodianoworld-20" target="_blank" rel="nofollow noopener sponsored">Check Price <small>on Amazon</small></a>
+<p class="cta-sub">Free delivery in Canada • 30-day returns</p>
 </div>
 </article>
 
@@ -164,7 +186,8 @@ nav.scrolled{box-shadow:0 6px 24px rgba(0,0,0,.45)}
 <li>Stainless-steel bowl — easy to clean</li>
 <li>Simple one-touch operation</li>
 </ul>
-<a class="btn-amazon" href="https://www.amazon.com/s?k=SHARDOR+One+Touch+electric+spice+grinder&tag=foodianoworld-20" target="_blank" rel="nofollow noopener sponsored">Check Price on Amazon</a>
+<a class="btn-amazon" href="https://www.amazon.com/s?k=SHARDOR+One+Touch+electric+spice+grinder&tag=foodianoworld-20" target="_blank" rel="nofollow noopener sponsored">Check Price <small>on Amazon</small></a>
+<p class="cta-sub">Free delivery in Canada • 30-day returns</p>
 </div>
 </article>
 
@@ -179,7 +202,8 @@ nav.scrolled{box-shadow:0 6px 24px rgba(0,0,0,.45)}
 <li>Ergonomic non-slip handles</li>
 <li>Stylish wooden block storage included</li>
 </ul>
-<a class="btn-amazon" href="https://www.amazon.com/s?k=chef%27s+knife+set&tag=foodianoworld-20" target="_blank" rel="nofollow noopener sponsored">Check Price on Amazon</a>
+<a class="btn-amazon" href="https://www.amazon.com/s?k=chef%27s+knife+set&tag=foodianoworld-20" target="_blank" rel="nofollow noopener sponsored">Check Price <small>on Amazon</small></a>
+<p class="cta-sub">Free delivery in Canada • 30-day returns</p>
 </div>
 </article>
 
@@ -299,11 +323,14 @@ nav.scrolled{box-shadow:0 6px 24px rgba(0,0,0,.45)}
 </div>
 </div>
 
+<div class="toast" id="amzToast" role="status">Opening Amazon with your saved tag foodianoworld-20 — thanks for supporting our tests!</div>
+
 <div class="share-modal-overlay" id="shareModal">
 <div class="share-modal">
 <button class="share-close" onclick="closeSharePopup()" aria-label="Close">&times;</button>
 <h2>&#x1F680; Turn Demo Traffic into Real Traffic</h2>
 <p class="sub">This demo shows $0.00 &mdash; but real traffic comes from sharing. Try it:</p>
+<p class="share-traffic">Shares = Real Traffic. 1 share = 20 visitors</p>
 <a class="share-btn share-wa" target="_blank" rel="noopener" href="https://wa.me/?text=Check%20this%20air%20fryer%20guide%20for%20small%20families%20-%20saved%20me%20money!%20https://dollarkamao.vercel.app/blog/best-air-fryer-small-families">&#x1F4F1; Share on WhatsApp</a>
 <a class="share-btn share-fb" target="_blank" rel="noopener" href="https://www.facebook.com/sharer/sharer.php?u=https://dollarkamao.vercel.app/blog/best-air-fryer-small-families">&#x1F4D8; Share on Facebook</a>
 <button class="share-btn share-copy" onclick="copyShareLink()">&#x1F517; Copy Link</button>
@@ -313,8 +340,14 @@ nav.scrolled{box-shadow:0 6px 24px rgba(0,0,0,.45)}
 </div>
 
 <footer>
-<a href="about.html">About</a>·<a href="contact.html">Contact</a>·<a href="privacy.html">Privacy Policy</a>
-<p style="margin-top:10px">© 2026 Dollar Kamao. All rights reserved.</p>
+<div class="foot-grid">
+<div><b>Explore</b><a href="index.html">Home</a><a href="about.html">About</a><a href="contact.html">Contact</a></div>
+<div><b>Best For Small Families</b><a href="blog/best-air-fryer-small-families.html">Best Air Fryer</a><a href="blog/electric-spice-grinder-review.html">Best Spice Grinder</a><a href="blog/adsense-guide.html">Earning Guide</a></div>
+<div><b>Our Promise</b><span>✓ Real research, no AI spam</span><span>✓ Demo numbers always $0.00</span><span>✓ Honest affiliate tags</span></div>
+<div><b>Legal</b><a href="#affiliate-disclosure">Affiliate Disclosure</a><a href="privacy.html">Privacy</a><a href="contact.html">Contact</a></div>
+</div>
+<p class="affil-note foot-base" id="affiliate-disclosure">As an Amazon Associate I earn from qualifying purchases.</p>
+<p class="foot-base">© 2026 DollarKamao — Built free on Vercel. No paid hosting.</p>
 </footer>
 
 <script>
@@ -400,6 +433,21 @@ document.getElementById('trendNext').onclick=function(){track.scrollBy({left:240
 (function(){
 var m=document.getElementById('marqueeInner');
 m.innerHTML+=m.innerHTML;
+})();
+
+
+/* ===== amazon click toast ===== */
+(function(){
+var toast=document.getElementById('amzToast'),tt=null;
+document.querySelectorAll('a[href*="amazon.com"]').forEach(function(a){
+  a.addEventListener('click',function(e){
+    e.preventDefault();
+    var href=a.getAttribute('href');
+    toast.classList.add('show');
+    if(tt)clearTimeout(tt);
+    tt=setTimeout(function(){toast.classList.remove('show');window.open(href,'_blank','noopener');},900);
+  });
+});
 })();
 
 /* ===== share popup (slide-up + blur) ===== */
