@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stats (Private) - Dollar Kamao</title>
+<meta name="robots" content="noindex, nofollow">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#0a0f1c;color:#e8edf5;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;min-height:100vh}
+.wide{max-width:900px;margin:0 auto;padding:30px 20px}
+h1{color:#fff;font-size:24px;margin-bottom:4px}
+.sub{color:#8a94a8;font-size:13px;margin-bottom:22px}
+table{width:100%;border-collapse:collapse;font-size:14px}
+th{text-align:left;color:#8a94a8;font-weight:600;padding:10px 12px;border-bottom:1px solid rgba(255,255,255,.12);font-size:12px;text-transform:uppercase;letter-spacing:.5px}
+td{padding:12px;border-bottom:1px solid rgba(255,255,255,.06);vertical-align:middle}
+tr:hover td{background:rgba(255,255,255,.02)}
+a{color:#00ff88;text-decoration:none}
+a:hover{text-decoration:underline}
+.views{font-weight:700;color:#ffb84d;white-space:nowrap}
+.date{color:#8a94a8;white-space:nowrap;font-size:13px}
+.note{margin-top:22px;color:#8a94a8;font-size:13px;line-height:1.6}
+.note b{color:#e8edf5}
+</style>
+</head>
+<body>
+<div class="wide">
+<h1>📊 Article Stats <span style="font-size:13px;color:#8a94a8;font-weight:400">(private — not linked anywhere)</span></h1>
+<p class="sub">View counts are placeholders (0) until Google Analytics is connected. Vercel Analytics dashboard shows real traffic after you enable it.</p>
+<table>
+<thead><tr><th>Article</th><th>Date</th><th>Views</th></tr></thead>
+<tbody id="rows"><tr><td colspan="3" style="color:#8a94a8">Loading…</td></tr></tbody>
+</table>
+<p class="note"><b>How to get real numbers:</b> 1) In your Vercel dashboard, open dollarkamao → Analytics → Enable — real visitor stats appear there. 2) Replace <b>G-XXXXXXXX</b> in the site's &lt;head&gt; with your Google Analytics 4 Measurement ID — then this page can be wired to show real view counts per article.</p>
+</div>
+<script>
+fetch('blog.json',{cache:'no-cache'}).then(function(r){return r.json();}).then(function(d){
+  var arts=(d.articles||[]).slice().sort(function(a,b){return a.date<b.date?1:-1;});
+  function fmt(ds){var p=ds.split('-');return ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'][+p[1]-1]+' '+ +p[2]+', '+p[0];}
+  document.getElementById('rows').innerHTML=arts.map(function(a){
+    var t=String(a.title).replace(/&/g,'&amp;').replace(/</g,'&lt;');
+    return '<tr><td><a href="blog/'+a.slug+'">'+t+'</a></td><td class="date">'+fmt(a.date)+'</td><td class="views">0 views</td></tr>';
+  }).join('')||'<tr><td colspan="3">No articles yet.</td></tr>';
+}).catch(function(){document.getElementById('rows').innerHTML='<tr><td colspan="3">Could not load blog.json.</td></tr>';});
+</script>
+</body>
+</html>
