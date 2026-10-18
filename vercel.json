@@ -1,10 +1,4 @@
 {
   "cleanUrls": true,
-  "trailingSlash": false,
-  "rewrites": [
-    {
-      "source": "/blog/tag/:tag",
-      "destination": "/blog/tag.html"
-    }
-  ]
+  "trailingSlash": false
 }
