@@ -3,26 +3,31 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dollar Kamao - Learn Web Development and Monetization</title>
-<meta name="description" content="How I built Dollar Kamao from scratch: HTML, CSS, JavaScript, GitHub and Vercel deployment, and how websites earn money with AdSense and affiliates.">
-<meta property="og:title" content="Dollar Kamao - Learn Web Development and Monetization">
-<meta property="og:description" content="How I built Dollar Kamao from scratch and how websites earn money online.">
+<title>Dollar Kamao - Best Small Kitchen Tools for Small Families (2026 Reviews)</title>
+<meta name="description" content="Honest, tested reviews of the best small kitchen tools for small families. New picks every day - real research, Amazon-verified.">
+<meta property="og:title" content="Dollar Kamao - Best Small Kitchen Tools for Small Families">
+<meta property="og:description" content="Tested reviews of small kitchen tools for small families. New picks daily.">
 <meta property="og:url" content="https://dollarkamao.vercel.app/">
 <meta property="og:type" content="website">
 <meta name="google-site-verification" content="beAdZCsfPDtvOpOotZZPIm_P03RHua18q7QebNOhQx4" />
 <link rel="stylesheet" href="styles.css">
 <style>
-.share-modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.78);z-index:100;align-items:center;justify-content:center;padding:20px}
-.share-modal{background:#101828;border:1px solid rgba(0,255,136,.35);border-radius:18px;max-width:440px;width:100%;padding:28px;position:relative}
-.share-modal h2{color:#00ff88;font-size:22px;margin-bottom:8px;padding-right:28px}
-.share-modal .sub{color:#aeb9cc;font-size:15px;margin-bottom:16px}
-.share-close{position:absolute;top:10px;right:14px;background:none;border:none;color:#aeb9cc;font-size:24px;cursor:pointer}
-.share-btn{display:block;width:100%;padding:14px;border:none;border-radius:12px;font-size:17px;font-weight:700;cursor:pointer;margin:8px 0;text-align:center;text-decoration:none;box-sizing:border-box}
-.share-wa{background:#25D366;color:#fff}
-.share-fb{background:#1877F2;color:#fff}
-.share-copy{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);color:#fff}
-#copyMsg{color:#00ff88;font-size:14px;min-height:20px;text-align:center;margin:6px 0}
-.share-foot{color:#8a94a8;font-size:12px;text-align:center;margin-top:12px}
+/* ===== latest reviews ===== */
+.sec-sub{text-align:center;color:#aeb9cc;margin:-4px 0 20px;font-size:15px}
+.rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:0 0 40px}
+@media(max-width:900px){.rev-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:580px){.rev-grid{grid-template-columns:1fr}}
+.rev-card{position:relative;display:block;background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.1);border-radius:18px;overflow:hidden;text-decoration:none;transition:transform .25s,box-shadow .25s;animation:fadeUp .5s ease both}
+@keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+.rev-card:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(0,0,0,.5)}
+.rev-img{position:relative;display:block;aspect-ratio:4/3;overflow:hidden;background:#101724}
+.rev-img img{width:100%;height:100%;object-fit:cover;display:block}
+.new-badge{position:absolute;top:10px;left:10px;background:linear-gradient(90deg,#00ff88,#00d4ff);color:#0a0f1c;font-weight:800;font-size:12px;padding:4px 11px;border-radius:999px;letter-spacing:.4px}
+.rev-body{display:block;padding:14px 16px 18px}
+.rev-body b{display:block;color:#fff;font-size:16.5px;line-height:1.35;margin-bottom:8px}
+.rev-body p{color:#aeb9cc;font-size:13.5px;line-height:1.5;margin:0 0 14px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.btn-check{display:inline-block;background:linear-gradient(180deg,#ffb84d,#ff9900);color:#1a1000;font-weight:800;font-size:15px;padding:11px 24px;border-radius:12px}
+.loading{color:#8a94a8;text-align:center;grid-column:1/-1;padding:20px}
 </style>
 <style>
 /* ===== Premium animated homepage (vanilla CSS/JS — zero frameworks, keeps load <2s) ===== */
@@ -96,14 +101,6 @@ nav.scrolled{box-shadow:0 6px 24px rgba(0,0,0,.45)}
 .btn{transition:transform .25s,box-shadow .25s}
 .btn-start:hover{transform:scale(1.03);box-shadow:0 8px 26px rgba(0,255,136,.45)}
 
-/* share modal: slide-up + blur */
-.share-modal-overlay{display:flex;opacity:0;pointer-events:none;transition:opacity .3s;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
-.share-modal-overlay.open{opacity:1;pointer-events:auto}
-.share-modal-overlay .share-modal{transform:translateY(70px);transition:transform .38s cubic-bezier(.2,.9,.3,1.15)}
-.share-modal-overlay.open .share-modal{transform:none}
-.share-btn{transition:transform .2s}
-.share-btn:hover{transform:scale(1.03)}
-
 .section-title{text-align:center;color:#00ff88;margin:34px 0 4px;font-size:24px}
 
 
@@ -145,7 +142,7 @@ nav.scrolled{box-shadow:0 6px 24px rgba(0,0,0,.45)}
 <nav id="siteNav"><div class="nav-inner">
 <a class="brand" href="index.html">💰 Dollar Kamao</a>
 <div class="nav-links">
-<a href="index.html" class="active">Home</a>
+<a href="index.html" class="active">Home</a><a href="blog/">Blog</a>
 <a href="about.html">About</a>
 <a href="contact.html">Contact</a>
 <a href="privacy.html">Privacy Policy</a>
@@ -253,97 +250,20 @@ nav.scrolled{box-shadow:0 6px 24px rgba(0,0,0,.45)}
 
 <div class="container">
 
-<!-- ============ LATEST ARTICLES ============ -->
-<h2 class="section-title reveal">📚 Latest Articles</h2>
-<div class="art-grid">
-<a class="art-card reveal" style="--d:0s" href="blog/adsense-guide.html">
-<b>How Websites Earn Money with AdSense — A Beginner's Guide</b>
-<p>What AdSense is, how it works, real earning numbers, and 3 tips to get approved.</p>
-<span class="read">Read guide →</span></a>
-<a class="art-card reveal" style="--d:.1s" href="blog/best-air-fryer-small-families.html">
-<b>Best Air Fryer for Small Families in Canada &amp; USA (2025 Tested)</b>
-<p>Top 3 air fryers for small families compared: price, size, pros, cons — plus a Foodiano World cooking tip.</p>
-<span class="read">Read guide →</span></a>
-<a class="art-card reveal" style="--d:.2s" href="blog/electric-spice-grinder-review.html">
-<b>Best Electric Spice Grinder for Small Families in Canada &amp; USA (2025 Review)</b>
-<p>My top pick for fresh masalas at home — with a desi cooking twist from Foodiano World.</p>
-<span class="read">Read guide →</span></a>
-</div>
+<!-- ============ LATEST REVIEWS ============ -->
+<h2 class="section-title reveal">⭐ Latest Reviews</h2>
+<p class="sec-sub reveal">Tested picks for small kitchens — newest first, fresh reviews every day.</p>
+<div class="rev-grid" id="latestReviews"><p class="loading">Loading reviews…</p></div>
 
-<h2 class="section-title reveal">📖 The Build Story</h2>
-<article class="reveal">
-<h2>Why I Built This Site</h2>
-<p>Every web developer remembers their first real website. Tutorials are useful, but nothing teaches you like building something of your own and putting it on the internet where anyone can open it. That is why I built Dollar Kamao. I wanted a project that would force me to learn the full journey: writing the code, making it look good, adding interactivity, deploying it online, and finally understanding how a website can actually earn money.</p>
-<p>I chose a money-themed demo site because monetization is the part most beginners skip. We learn HTML tags and CSS colors, but nobody explains how the websites we use every day pay their bills. Building Dollar Kamao taught me both sides at once: the technical skill of creating pages, and the business knowledge of how those pages can generate income through advertising and affiliate programs.</p>
-
-<h2>The Idea Behind Dollar Kamao</h2>
-<p>Dollar Kamao started as a simple concept: a dashboard-style page with a start button, live stats, and a log feed. The idea was to simulate the kind of admin panel you see behind real online earning platforms. Even though the numbers on this site are a simulation for learning purposes, the structure is real. Real dashboards have the same building blocks: a header, stat cards, buttons that trigger actions, and a feed that updates in real time.</p>
-<p>Starting with a clear, small idea matters more than beginners think. A huge project idea leads to quitting halfway. A small idea you actually finish teaches you the complete workflow, and you can expand it later. My plan was simple: one page, clean design, working buttons, deployed online. Everything else — the blog articles, the about page, the contact form — came after the foundation worked.</p>
-
-<h2>Starting With HTML: The Skeleton</h2>
-<p>Every website starts with HTML, the markup language that defines structure. Think of HTML as the skeleton of the page. My index page uses headings for the title, div elements for the stat cards, buttons for the start and withdraw actions, and a form on the contact page for messages. Learning the most common tags — headings, paragraphs, links, images, lists, forms, and containers — covers about ninety percent of what a beginner needs.</p>
-<p>One habit that helped me early was writing semantic HTML. Instead of wrapping everything in generic div elements, I used header, nav, main, article, and footer tags where they fit. This does not change how the page looks, but it helps search engines understand the page and helps screen readers navigate it. When your goal is earning through programs like Google AdSense, this kind of clean structure matters, because reviewers and crawlers both prefer pages that are easy to understand.</p>
-
-<h2>Making It Look Good With CSS</h2>
-<p>CSS controls everything visual: colors, spacing, fonts, and layout. Dollar Kamao uses a dark theme with green and blue accents, card-style containers with soft borders, and a responsive grid for the statistics. The most valuable CSS skill I learned was responsive design — making the page look good on both phones and desktops. More than half of web traffic comes from mobile devices, so a site that breaks on a phone screen loses most of its visitors before they read a single word.</p>
-<p>I used a simple technique: a flexible container with a maximum width, a grid layout that collapses to fewer columns on small screens, and a media query that adjusts font sizes below 600 pixels of width. You do not need a heavy framework to be mobile-friendly. A few lines of thoughtful CSS are enough, and they keep the page fast. Speed matters too — visitors leave slow pages, and advertising programs favor sites that load quickly.</p>
-
-<h2>Bringing It to Life With JavaScript</h2>
-<p>JavaScript is what makes a page interactive. On Dollar Kamao, the “Try Interactive Demo” button runs a front-end script that updates the demo stats, appends messages to the demo log, and animates the demo balance every second and a half — purely a simulation, with no real earnings. Without JavaScript, the page would be a static poster. With it, the page responds to the visitor.</p>
-<p>The core concepts I used are the same ones behind far bigger applications: selecting elements on the page, listening for clicks, updating text content, and running timed intervals. If you are learning, my advice is to build small interactive widgets like this one before touching any framework. When you understand what plain JavaScript can do, frameworks stop feeling like magic and start feeling like shortcuts — which is exactly what they are.</p>
-
-<h2>Putting It Online: GitHub and Vercel</h2>
-<p>A website sitting on your laptop is not a website yet. Deployment — getting it onto the public internet — is the step that makes everything real. I used GitHub to store my code and Vercel to publish it. The workflow is simple: I push my files to a GitHub repository, Vercel detects the change, and within about a minute the live site at dollarkamao.vercel.app is updated automatically.</p>
-<p>This setup is free and it is the same professional workflow used by real development teams: version control with Git, code review through pull requests when needed, and continuous deployment so the live site always matches the latest code. Learning this pipeline early was one of the most valuable parts of the project. Writing code is only half the job; shipping it reliably is the other half, and employers care deeply about the second half.</p>
-
-<h2>How Websites Actually Earn Money</h2>
-<p>Now the part everyone asks about: how does a website earn? The two most common paths for content sites are display advertising and affiliate marketing. With Google AdSense, you place ad units on your pages and earn when visitors view or click the ads. With affiliate marketing, you recommend products and earn a commission when someone buys through your link. Both require the same foundation: real visitors reading real content.</p>
-<p>Here is the honest part that took me a while to accept. A website earns nothing without traffic, and traffic comes from content people actually want. Search engines send visitors to pages that answer questions well. That is why this site has full articles, an about page, a contact page, and a privacy policy instead of just a demo widget. Approval for ad programs is a review process — a real person or system checks that your site has original, substantial content and a professional structure. There are no shortcuts, and anyone promising earnings without visitors is selling a fantasy. Build the content first, apply second, and treat the first months as learning.</p>
-
-<h2>What I Learned and What Is Next</h2>
-<p>Building Dollar Kamao taught me more than any single tutorial: how HTML, CSS, and JavaScript fit together, how deployment pipelines work, and how the business side of the web operates. My next steps are writing more in-depth articles, learning a backend so the contact form and user data have a real database behind them, and experimenting with analytics to understand what visitors actually read.</p>
-<p>If you are learning web development, my advice is simple. Pick one small project, finish it, deploy it, and then improve it in public. That loop — build, ship, learn, repeat — is the entire career in miniature. Dollar Kamao is my version of it, and this article is the map of how I got here.</p>
-</article>
-
-<div class="card reveal">
-<h2 style="text-align:center;color:#00ff88;margin-bottom:6px;font-size:26px">For Educational Demo Only &mdash; No Real Earnings</h2>
-<p style="text-align:center;color:#aeb9cc;font-size:14px;margin-bottom:14px">A simulation of an earning dashboard — numbers are generated in your browser for demonstration only.</p>
-<p style="text-align:center">Demo Status: <span id="status">Stopped</span></p>
-<button class="btn btn-start" id="mainBtn" onclick="openSharePopup()">Try Interactive Demo</button>
-<p class="small" style="margin-top:8px">This is a front-end simulation. It does not generate real income.</p>
-<div class="stats" style="margin-top:12px">
-<div class="card stat"><b id="today" data-count="0" data-dec="2" data-prefix="$">$0.00</b><span>Demo Balance &mdash; Today</span></div>
-<div class="card stat"><b id="total" data-count="0" data-dec="2" data-prefix="$">$0.00</b><span>Demo Balance &mdash; Total</span></div>
-<div class="card stat"><b id="tasks" data-count="0" data-dec="0">0</b><span>Tasks</span></div>
-<div class="card stat"><b id="clicks" data-count="0" data-dec="0">0</b><span>Clicks</span></div>
-</div>
-<h3 style="margin:16px 0 8px">Demo Logs</h3>
-<div class="log" id="log">Demo ready &mdash; press the button to try it.<br></div>
-<p class="small" style="margin-top:8px">Tip: Real engine = Google SEO + Shares. Fake engine = ban.</p>
-</div>
 </div>
 
 <div class="toast" id="amzToast" role="status">Opening Amazon with your saved tag foodianoworld-20 — thanks for supporting our tests!</div>
 
-<div class="share-modal-overlay" id="shareModal">
-<div class="share-modal">
-<button class="share-close" onclick="closeSharePopup()" aria-label="Close">&times;</button>
-<h2>&#x1F680; Turn Demo Traffic into Real Traffic</h2>
-<p class="sub">This demo shows $0.00 &mdash; but real traffic comes from sharing. Try it:</p>
-<p class="share-traffic">Shares = Real Traffic. 1 share = 20 visitors</p>
-<a class="share-btn share-wa" target="_blank" rel="noopener" href="https://wa.me/?text=Check%20this%20air%20fryer%20guide%20for%20small%20families%20-%20saved%20me%20money!%20https://dollarkamao.vercel.app/blog/best-air-fryer-small-families">&#x1F4F1; Share on WhatsApp</a>
-<a class="share-btn share-fb" target="_blank" rel="noopener" href="https://www.facebook.com/sharer/sharer.php?u=https://dollarkamao.vercel.app/blog/best-air-fryer-small-families">&#x1F4D8; Share on Facebook</a>
-<button class="share-btn share-copy" onclick="copyShareLink()">&#x1F517; Copy Link</button>
-<p id="copyMsg"></p>
-<p class="share-foot">This share brings REAL visitors to your site. No bots, 100% safe for AdSense &amp; Amazon Affiliates (foodianoworld-20).</p>
-</div>
-</div>
-
 <footer>
 <div class="foot-grid">
-<div><b>Explore</b><a href="index.html">Home</a><a href="about.html">About</a><a href="contact.html">Contact</a></div>
-<div><b>Best For Small Families</b><a href="blog/best-air-fryer-small-families.html">Best Air Fryer</a><a href="blog/electric-spice-grinder-review.html">Best Spice Grinder</a><a href="blog/adsense-guide.html">Earning Guide</a></div>
-<div><b>Our Promise</b><span>✓ Real research, no AI spam</span><span>✓ Demo numbers always $0.00</span><span>✓ Honest affiliate tags</span></div>
+<div><b>Explore</b><a href="index.html">Home</a><a href="blog/">Blog</a><a href="about.html">About</a><a href="contact.html">Contact</a></div>
+<div><b>Best For Small Families</b><a href="blog/best-sandwich-maker-small-families">Sandwich Maker</a><a href="blog/best-milk-frother-small-families">Milk Frother</a><a href="blog/best-mini-food-chopper-small-families">Mini Food Chopper</a></div>
+<div><b>Our Promise</b><span>✓ Real research, no AI spam</span><span>✓ Tested for small families</span><span>✓ Honest affiliate tags</span></div>
 <div><b>Legal</b><a href="#affiliate-disclosure">Affiliate Disclosure</a><a href="privacy.html">Privacy</a><a href="contact.html">Contact</a></div>
 </div>
 <p class="affil-note foot-base" id="affiliate-disclosure">As an Amazon Associate I earn from qualifying purchases.</p>
@@ -450,23 +370,24 @@ document.querySelectorAll('a[href*="amazon.com"]').forEach(function(a){
 });
 })();
 
-/* ===== share popup (slide-up + blur) ===== */
-function openSharePopup(){
-  document.getElementById('shareModal').classList.add('open');
-  document.body.style.overflow='hidden';
-}
-function closeSharePopup(){
-  document.getElementById('shareModal').classList.remove('open');
-  document.body.style.overflow='';
-}
-document.getElementById('shareModal').addEventListener('click',function(e){if(e.target===this)closeSharePopup();});
-document.addEventListener('keydown',function(e){if(e.key==='Escape')closeSharePopup();});
-function copyShareLink(){
-var link='https://dollarkamao.vercel.app/blog/best-air-fryer-small-families';
-var done=function(){document.getElementById('copyMsg').textContent='Link Copied! Share it and get more guides';};
-function fallback(){var ta=document.createElement('textarea');ta.value=link;document.body.appendChild(ta);ta.select();try{document.execCommand('copy');done();}catch(e){}document.body.removeChild(ta);}
-if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(link).then(done).catch(fallback);}else{fallback();}
-}
+
+/* ===== latest reviews from blog.json ===== */
+(function(){
+var grid=document.getElementById('latestReviews');if(!grid)return;
+fetch('blog.json',{cache:'no-cache'}).then(function(r){return r.json();}).then(function(d){
+  var arts=(d.articles||[]).slice().sort(function(a,b){return a.date<b.date?1:-1;}).slice(0,6);
+  var now=new Date();now.setHours(0,0,0,0);
+  grid.innerHTML=arts.map(function(a,i){
+    var age=Math.floor((now-new Date(a.date+'T00:00:00'))/864e5);
+    var badge=age<3?'<span class="new-badge">New</span>':'';
+    var t=String(a.title).replace(/&/g,'&amp;').replace(/</g,'&lt;');
+    var e=String(a.excerpt||'').replace(/&/g,'&amp;').replace(/</g,'&lt;');
+    return '<a class="rev-card" style="animation-delay:'+(i*0.07)+'s" href="blog/'+a.slug+'">'+
+      '<span class="rev-img"><img loading="lazy" alt="'+t+'" src="'+a.image+'">'+badge+'</span>'+
+      '<span class="rev-body"><b>'+t+'</b><p>'+e+'</p><span class="btn-check">Check Price &rarr;</span></span></a>';
+  }).join('')||'<p class="loading">Reviews coming soon.</p>';
+}).catch(function(){grid.innerHTML='<p class="loading">Reviews coming soon.</p>';});
+})();
 </script>
 </body>
 </html>
