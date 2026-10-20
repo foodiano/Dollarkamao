@@ -48,3 +48,36 @@ article h2{letter-spacing:.01em}
 ::selection{background:#c9a24b;color:#0e0c09}
 .card{border-color:rgba(201,162,75,.26)}
 footer{border-top:1px solid rgba(201,162,75,.26)}
+
+/* ===== mobile layer ===== */
+
+html{-webkit-text-size-adjust:100%}
+body{overflow-x:hidden}
+img,video,iframe{max-width:100%}
+a,button{-webkit-tap-highlight-color:rgba(201,162,75,.25)}
+@media(max-width:700px){
+.nav-inner{padding:10px 14px;gap:8px}
+.brand{font-size:18px !important}
+.nav-links{gap:11px;flex-wrap:wrap}
+.nav-links a{font-size:14px;padding:7px 2px}
+.hero{padding:26px 0 6px}
+.hero h1{font-size:26px}
+.dk-hero{padding:36px 14px 4px}
+.dk-hero-title{font-size:31px !important}
+.dk-hero-sub{font-size:15.5px}
+.section-title{font-size:24px !important}
+.sec-head{flex-wrap:wrap;gap:6px}
+.sec-head h2{font-size:22px !important}
+.slide-copy h2{font-size:21px !important}
+.foot-grid{grid-template-columns:1fr 1fr;gap:14px}
+.dk-share a{padding:9px 13px}
+.dk-toc{padding:14px 16px}
+article h2{font-size:21px}
+.cta{font-size:16.5px;padding:15px 16px}
+.compare{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch}
+.compare th,.compare td{padding:8px 6px}
+.card{padding:18px}
+.toast{left:12px;right:12px;transform:none;width:auto}
+}
+@media(max-width:420px){.foot-grid{grid-template-columns:1fr}}
+
