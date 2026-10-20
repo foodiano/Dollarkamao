@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://dollarkamao.vercel.app/sitemap.xml
+Sitemap: https://foodiano.vercel.app/sitemap.xml
