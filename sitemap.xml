@@ -235,6 +235,12 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://foodiano.vercel.app/blog/tag/spicegrinder</loc>
+    <lastmod>2026-10-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://foodiano.vercel.app/about</loc>
     <lastmod>2026-10-21</lastmod>
     <changefreq>monthly</changefreq>
