@@ -12,7 +12,7 @@
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 body{background:linear-gradient(180deg,#0e0c09 0%,#14110c 40%,#0e0c09 100%);color:#f2ead8;font-family:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;min-height:100vh}
-nav{position:sticky;top:0;z-index:50;background:rgba(10,15,28,.92);backdrop-filter:blur(8px);border-bottom:1px solid rgba(255,255,255,.08)}
+nav{position:sticky;top:0;z-index:50;background:rgba(14,12,9,.8);backdrop-filter:blur(12px) saturate(1.3);-webkit-backdrop-filter:blur(12px) saturate(1.3);border-bottom:1px solid rgba(216,180,90,.18)}
 .nav-inner{max-width:1100px;margin:0 auto;padding:12px 20px;display:flex;align-items:center;justify-content:space-between}
 .brand{color:#fff;font-weight:800;font-size:19px;text-decoration:none}
 .nav-links{display:flex;gap:20px}
@@ -21,16 +21,19 @@ nav{position:sticky;top:0;z-index:50;background:rgba(10,15,28,.92);backdrop-filt
 .wide{max-width:1100px;margin:0 auto;padding:0 20px}
 h1{text-align:center;color:#fff;font-size:30px;margin:34px 0 6px}
 .sec-sub{text-align:center;color:#b3a893;margin:0 0 26px;font-size:15px}
-.rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:0 0 50px}
+.rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin:0 0 50px}
 @media(max-width:900px){.rev-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:580px){.rev-grid{grid-template-columns:1fr}}
-.rev-card{position:relative;display:block;background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.1);border-radius:18px;overflow:hidden;text-decoration:none;transition:transform .25s,box-shadow .25s;animation:fadeUp .5s ease both}
+.rev-card{position:relative;display:block;background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.1);border-radius:20px;overflow:hidden;text-decoration:none;transition:transform .25s,box-shadow .25s;animation:fadeUp .5s ease both;box-shadow:0 10px 30px rgba(0,0,0,.35)}
 @keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
-.rev-card:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(0,0,0,.5)}
+.rev-card:hover{transform:translateY(-5px);box-shadow:0 22px 48px rgba(0,0,0,.55)}
 .rev-img{position:relative;display:block;aspect-ratio:4/3;overflow:hidden;background:#1a1712}
 .rev-img img{width:100%;height:100%;object-fit:cover;display:block}
 .rev-ph{display:flex;align-items:center;justify-content:center;height:100%;font-size:64px;background:linear-gradient(135deg,#2a2118,#171310)}
 .new-badge{position:absolute;top:10px;left:10px;background:linear-gradient(90deg,#e9cf8a,#c9a24b);color:#0e0c09;font-weight:800;font-size:12px;padding:4px 11px;border-radius:999px;letter-spacing:.4px}
+.pick-badge{position:absolute;top:10px;right:10px;background:rgba(14,12,9,.86);border:1px solid rgba(216,180,90,.65);color:#e9cf8a;font-weight:700;font-size:11px;padding:4px 10px;border-radius:999px;letter-spacing:.05em;text-transform:uppercase}
+.score-line{display:block;color:#e9cf8a;font-weight:700;font-size:13.5px;margin:0 0 8px}
+.score-line i{color:#9c927e;font-style:normal;font-weight:400;font-size:12.5px}
 .rev-date{display:block;color:#9c927e;font-size:12px;margin-bottom:6px}
 .rev-body{display:block;padding:14px 16px 18px}
 .rev-body b{display:block;color:#fff;font-size:16.5px;line-height:1.35;margin-bottom:8px}
@@ -141,7 +144,7 @@ article h2{font-size:21px}
 <nav><div class="nav-inner">
 <a class="brand" href="/">Foodiano World</a>
 <div class="nav-links">
-<a href="/">Home</a><a href="./" class="active">Blog</a><a href="/about">About</a><a href="/contact">Contact</a>
+<a href="/">Home</a><a href="/blog" class="active">Blog</a><a href="/about">About</a><a href="/contact">Contact</a>
 </div></div></nav>
 
 <div class="wide">
@@ -151,8 +154,8 @@ article h2{font-size:21px}
 <div class="rev-grid" id="allReviews"><p class="loading">Loading reviews…</p></div>
 </div>
 
-<div class="wide" id="allReviewsStatic" style="margin:26px auto 6px"><h2 style="font-size:20px;margin:0 0 10px">Browse all reviews</h2><ul style="columns:2;column-gap:34px;line-height:1.9;font-size:15px;padding-left:18px"><li><a href="/blog/best-coffee-grinder-small-families">Best Coffee Grinder for Small Families (2026 Guide)</a></li><li><a href="/blog/best-waffle-maker-small-families">Best Waffle Maker for Small Families (2026 Guide)</a></li><li><a href="/blog/best-slow-cooker-small-families">Best Slow Cooker for Small Families (2026 Guide)</a></li><li><a href="/blog/best-toaster-oven-small-families">Best Toaster Oven for Small Families (2026 Guide)</a></li><li><a href="/blog/best-rice-cooker-small-families">Best Rice Cooker for Small Families (2026 Guide)</a></li><li><a href="/blog/best-immersion-blender-small-families">Best Immersion Blender for Small Families (2026 Guide)</a></li><li><a href="/blog/best-popcorn-maker-small-families">Best Popcorn Maker for Small Families (2026 Guide)</a></li><li><a href="/blog/best-citrus-juicer-small-families">Best Citrus Juicer for Small Families (2026 Guide)</a></li><li><a href="/blog/best-vegetable-chopper-small-families">Best Vegetable Chopper for Small Families (2026 Guide)</a></li><li><a href="/blog/best-milk-frother-small-families">Best Milk Frother for Small Families (2026 Guide)</a></li><li><a href="/blog/best-sandwich-maker-small-families">Best Sandwich Maker for Small Families (2026 Guide)</a></li><li><a href="/blog/best-mini-food-chopper-small-families">Best Mini Food Chopper for Small Families (2026 Guide)</a></li><li><a href="/blog/best-electric-kettle-small-families">Best Electric Kettle for Small Families (2026 Guide)</a></li><li><a href="/blog/best-hand-mixer-small-families">Best Hand Mixer for Small Families (2026 Guide)</a></li><li><a href="/blog/best-chefs-knife-set-small-families">Best Chef&#x27;s Knife Set for Small Families (2026 Guide)</a></li><li><a href="/blog/best-air-fryer-small-families">Best Air Fryer for Small Families (2026 Guide)</a></li><li><a href="/blog/electric-spice-grinder-review">Electric Spice Grinder Review — SHARDOR One Touch</a></li><li><a href="/blog/adsense-guide">How Websites Earn Money with AdSense — Beginner Guide</a></li></ul></div><footer>
-<a href="/">Home</a>·<a href="./">Blog</a>·<a href="/about">About</a>·<a href="/contact">Contact</a>·<a href="/privacy">Privacy</a>
+<div class="wide" id="allReviewsStatic" style="margin:26px auto 6px"><h2 style="font-size:20px;margin:0 0 10px">Browse all reviews</h2><ul style="columns:2;column-gap:34px;line-height:1.9;font-size:15px;padding-left:18px"><li><a href="/blog/best-coffee-grinder-small-families">Best Coffee Grinder for Small Families (2026 Guide)</a></li><li><a href="/blog/best-waffle-maker-small-families">Best Waffle Maker for Small Families (2026 Guide)</a></li><li><a href="/blog/hamilton-beach-fresh-grind-review">Best Hamilton Beach Fresh Grind Grinder for Small Families in Canada &amp; USA (2026 Review)</a></li><li><a href="/blog/best-slow-cooker-small-families">Best Slow Cooker for Small Families (2026 Guide)</a></li><li><a href="/blog/best-toaster-oven-small-families">Best Toaster Oven for Small Families (2026 Guide)</a></li><li><a href="/blog/best-rice-cooker-small-families">Best Rice Cooker for Small Families (2026 Guide)</a></li><li><a href="/blog/best-immersion-blender-small-families">Best Immersion Blender for Small Families (2026 Guide)</a></li><li><a href="/blog/best-popcorn-maker-small-families">Best Popcorn Maker for Small Families (2026 Guide)</a></li><li><a href="/blog/best-citrus-juicer-small-families">Best Citrus Juicer for Small Families (2026 Guide)</a></li><li><a href="/blog/best-vegetable-chopper-small-families">Best Vegetable Chopper for Small Families (2026 Guide)</a></li><li><a href="/blog/best-milk-frother-small-families">Best Milk Frother for Small Families (2026 Guide)</a></li><li><a href="/blog/best-sandwich-maker-small-families">Best Sandwich Maker for Small Families (2026 Guide)</a></li><li><a href="/blog/best-mini-food-chopper-small-families">Best Mini Food Chopper for Small Families (2026 Guide)</a></li><li><a href="/blog/best-electric-kettle-small-families">Best Electric Kettle for Small Families (2026 Guide)</a></li><li><a href="/blog/best-hand-mixer-small-families">Best Hand Mixer for Small Families (2026 Guide)</a></li><li><a href="/blog/best-chefs-knife-set-small-families">Best Chef&#x27;s Knife Set for Small Families (2026 Guide)</a></li><li><a href="/blog/best-air-fryer-small-families">Best Air Fryer for Small Families (2026 Guide)</a></li><li><a href="/blog/electric-spice-grinder-review">Electric Spice Grinder Review — SHARDOR One Touch</a></li><li><a href="/blog/adsense-guide">How Websites Earn Money with AdSense — Beginner Guide</a></li></ul></div><footer>
+<a href="/">Home</a>·<a href="/blog">Blog</a>·<a href="/about">About</a>·<a href="/contact">Contact</a>·<a href="/privacy">Privacy</a>
 <p class="affil-note">As an Amazon Associate I earn from qualifying purchases.</p>
 <p style="margin-top:10px">© 2026 Foodiano World. All rights reserved.</p>
 </footer>
@@ -167,12 +170,14 @@ fetch('../blog.json',{cache:'no-cache'}).then(function(r){return r.json();}).the
   grid.innerHTML=arts.map(function(a,i){
     var age=Math.floor((now-new Date(a.date+'T00:00:00'))/864e5);
     var badge=age<3?'<span class="new-badge">New</span>':'';
+    var pick=a.badge?'<span class="pick-badge">'+String(a.badge).replace(/</g,'&lt;')+'</span>':'';
+    var score=a.score?'<span class="score-line">★ '+Number(a.score).toFixed(1)+' <i>· Our score</i></span>':'';
     var t=String(a.title).replace(/&/g,'&amp;').replace(/</g,'&lt;');
     var e=String(a.excerpt||'').replace(/&/g,'&amp;').replace(/</g,'&lt;');
     var img=a.image?'<img loading="lazy" alt="'+t+'" src="'+a.image+'">':'<span class="rev-ph">DK</span>';
-    return '<a class="rev-card" style="animation-delay:'+(i*0.05)+'s" href="'+a.slug+'">'+
-      '<span class="rev-img">'+img+badge+'</span>'+
-      '<span class="rev-body"><span class="rev-date">'+fmt(a.date)+'</span><b>'+t+'</b><p>'+e+'</p><span class="btn-check">Check Price &rarr;</span></span></a>';
+    return '<a class="rev-card" style="animation-delay:'+(i*0.05)+'s" href="/blog/'+a.slug+'">'+
+      '<span class="rev-img">'+img+badge+pick+'</span>'+
+      '<span class="rev-body"><span class="rev-date">'+fmt(a.date)+'</span><b>'+t+'</b>'+score+'<p>'+e+'</p><span class="btn-check">Check Price &rarr;</span></span></a>';
   }).join('')||'<p class="loading">Reviews coming soon.</p>';
 }).catch(function(){grid.innerHTML='<p class="loading">Reviews coming soon.</p>';});
 })();
