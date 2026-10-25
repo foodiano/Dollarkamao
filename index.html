@@ -622,7 +622,7 @@ fetch('blog.json',{cache:'no-cache'}).then(function(r){return r.json();}).then(f
     var badge=age<3?'<span class="new-badge">New</span>':'';
     var pick=a.badge?'<span class="pick-badge">'+String(a.badge).replace(/</g,'&lt;')+'</span>':'';
     var t=String(a.title).replace(/&/g,'&amp;').replace(/</g,'&lt;');
-    var img=a.image?'<img loading="lazy" alt="'+t+'" src="'+a.image+'">':'<span class="rev-ph">DK</span>';
+    var img=a.image?'<img loading="lazy" alt="'+t+'" src="'+a.image+'">':'<span class="rev-ph">FW</span>';
     return '<a class="arrive-card" href="/blog/'+a.slug+'"><span class="rev-img">'+img+badge+pick+'</span><b>'+t+'</b></a>';
   }).join('');
   track.innerHTML=html+html;
@@ -641,7 +641,7 @@ fetch('blog.json',{cache:'no-cache'}).then(function(r){return r.json();}).then(f
     var score=a.score?'<span class="score-line">★ '+Number(a.score).toFixed(1)+' <i>· Our score</i></span>':'';
     var t=String(a.title).replace(/&/g,'&amp;').replace(/</g,'&lt;');
     var e=String(a.excerpt||'').replace(/&/g,'&amp;').replace(/</g,'&lt;');
-    var img=a.image?'<img loading="lazy" alt="'+t+'" src="'+a.image+'">':'<span class="rev-ph">DK</span>';
+    var img=a.image?'<img loading="lazy" alt="'+t+'" src="'+a.image+'">':'<span class="rev-ph">FW</span>';
     return '<a class="rev-card" style="animation-delay:'+(i*0.07)+'s" href="/blog/'+a.slug+'">'+
       '<span class="rev-img">'+img+badge+pick+'</span>'+
       '<span class="rev-body"><b>'+t+'</b>'+score+'<p>'+e+'</p><span class="btn-check">Check Price &rarr;</span></span></a>';
@@ -658,7 +658,7 @@ fetch('blog.json',{cache:'no-cache'}).then(function(r){return r.json();}).then(f
     var score=a.score?'<span class="score-line">★ '+Number(a.score).toFixed(1)+' <i>· Our score</i></span>':'';
     var t=String(a.title).replace(/&/g,'&amp;').replace(/</g,'&lt;');
     var e=String(a.excerpt||'').replace(/&/g,'&amp;').replace(/</g,'&lt;');
-    var img=a.image?'<img loading="lazy" alt="'+t+'" src="'+a.image+'">':'<span class="rev-ph">DK</span>';
+    var img=a.image?'<img loading="lazy" alt="'+t+'" src="'+a.image+'">':'<span class="rev-ph">FW</span>';
     return '<a class="rev-card" style="animation-delay:'+(i*0.07)+'s" href="/blog/'+a.slug+'">'+
       '<span class="rev-img">'+img+pick+'</span>'+
       '<span class="rev-body"><b>'+t+'</b>'+score+'<p>'+e+'</p><span class="btn-check">Check Price &rarr;</span></span></a>';

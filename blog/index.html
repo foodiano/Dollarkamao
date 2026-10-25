@@ -174,7 +174,7 @@ fetch('../blog.json',{cache:'no-cache'}).then(function(r){return r.json();}).the
     var score=a.score?'<span class="score-line">★ '+Number(a.score).toFixed(1)+' <i>· Our score</i></span>':'';
     var t=String(a.title).replace(/&/g,'&amp;').replace(/</g,'&lt;');
     var e=String(a.excerpt||'').replace(/&/g,'&amp;').replace(/</g,'&lt;');
-    var img=a.image?'<img loading="lazy" alt="'+t+'" src="'+a.image+'">':'<span class="rev-ph">DK</span>';
+    var img=a.image?'<img loading="lazy" alt="'+t+'" src="'+a.image+'">':'<span class="rev-ph">FW</span>';
     return '<a class="rev-card" style="animation-delay:'+(i*0.05)+'s" href="/blog/'+a.slug+'">'+
       '<span class="rev-img">'+img+badge+pick+'</span>'+
       '<span class="rev-body"><span class="rev-date">'+fmt(a.date)+'</span><b>'+t+'</b>'+score+'<p>'+e+'</p><span class="btn-check">Check Price &rarr;</span></span></a>';
