@@ -359,4 +359,10 @@
     <loc>https://foodiano.vercel.app/blog/instant-pot-vs-slow-cooker-small-families</loc>
     <lastmod>2026-11-09</lastmod>
   </url>
+  <url>
+    <loc>https://foodiano.vercel.app/blog/air-fryer-vs-toaster-oven-small-families</loc>
+    <lastmod>2026-11-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>
